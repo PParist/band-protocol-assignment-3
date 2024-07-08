@@ -64,12 +64,5 @@ func (s *transactionService) CheckTransactionStatus(hash string) (string, error)
 	if err := json.Unmarshal(body, &status); err != nil {
 		return "", err
 	}
-
-	// // ดึงสถานะจากคำตอบ
-	// status, ok := result["status"].(string)
-	// if !ok {
-	// 	return "", fmt.Errorf("status not found in response")
-	// }
-
 	return status.Tx_Status, nil
 }
